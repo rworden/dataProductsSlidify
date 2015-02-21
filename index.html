@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>African Conflict Fatalities</title>
+  <meta charset="utf-8">
+  <meta name="description" content="African Conflict Fatalities">
+  <meta name="author" content="rworden">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>African Conflict Fatalities</h1>
+    <h2>Types and Trends</h2>
+    <p>rworden<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Where, When, and Why</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The years 1997 - 2014 saw approximately 586716 people killed in Africa due to various types of violence.</p>
+
+<p>We&#39;ll use data from the Armed Conflict Location &amp; Event Data Project (<a href="http://www.acleddata.com/">http://www.acleddata.com/</a>, see below) to get a better understanding of how these fatalities varied across countries, over time, and by cause. </p>
+
+<p>With <code>50</code> unique countries, <code>18</code> years, and <code>6</code> event types, we&#39;ll need an interactive means of interpreting this data as graphs would be exceedingly complex. </p>
+
+<iframe src='http://www.acleddata.com/' height = '300px'></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Yearly roll-up</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Yearly the trend looks like this for all event types:</p>
+
+<p><img src="assets/fig/yearPlot.png" alt="plot of chunk yearPlot"> </p>
+
+<p>This chart is interesting, but it&#39;s difficult to tell what&#39;s driving variations over time. The spike in 1999 to almost 200,000 deaths leaves a lot of questions unanswered. What countries did these deaths occur in? What types of conflict drove this spike? </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Event type roll-up</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>As was the case with a yearly roll-up, this chart is interesting but we&#39;re missing two axes - time and country.</p>
+
+<p><img src="assets/fig/eventPlot.png" alt="plot of chunk eventPlot"> </p>
+
+<p>We&#39;re able to say that &#39;Battle-No change of territory&#39; accounts for the majority of deaths, but we have no idea if those deaths occurred disproportionately in 1999 or in specific countries. We need an more flexible way to observe how time, type of conflict, and country interact. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Shiny to the rescue</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>With a shiny app and choropleth, we can more easily observe how fatalities vary by cause (Event Type), time (Year), and place (Country).(It may take few seconds to load)</p>
+
+<p>Setting the year to 1999 and cycling through the various conflict types gives us a much clearer picture of what happened - it looks like Angola and Eritrea each had around 80,000 deaths due to &#39;Battle-No change of territory&#39; in 1999. Those two conflict types and countries explain 70% of deaths in 1999. </p>
+
+<iframe src='http://rworden.shinyapps.io/project' height = '300px'></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Where, When, and Why'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Yearly roll-up'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Event type roll-up'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Shiny to the rescue'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
