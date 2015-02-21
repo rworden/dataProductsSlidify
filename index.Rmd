@@ -12,7 +12,20 @@ knit        : slidify::knit2slides
 ---
 
 ## Where, When, and Why
-
+```{r, echo = FALSE}
+library(plyr)
+library(ggplot2)
+# acledStandard<-read.csv("../data/ACLED Version 5 All Africa 1997-2014_dyadic_Updated_csv.csv")
+# 
+# z <- ddply(acledStandard,.(COUNTRY,YEAR,EVENT_TYPE),summarize,fatalities=sum(FATALITIES)) 
+# #remove these EVENT_TYPES because they don't vary that much and aren't interesting
+# z <- z[z$EVENT_TYPE != 'Headquarters or base established' & 
+#            z$EVENT_TYPE != 'Non-violent transfer of territory' &
+#            z$EVENT_TYPE != 'Non-violent activity by a conflict actor',]  
+# z_all <- sum(z$fatalities,na.rm=TRUE)
+# z_year <- ddply(z,.(YEAR),summarise,fatalities=sum(fatalities,na.rm=TRUE)) 
+# z_type <- ddply(z,.(EVENT_TYPE),summarise,fatalities=sum(fatalities, na.rm=TRUE)) 
+```
 The years `r min(z$YEAR)` - `r max(z$YEAR)` saw approximately `r sum(z$fatalities,na.rm=TRUE)` people killed in Africa due to various types of violence.
 
 We'll use data from the Armed Conflict Location & Event Data Project (http://www.acleddata.com/, see below) to get a better understanding of how these fatalities varied across countries, over time, and by cause. 
@@ -27,7 +40,7 @@ With ```r length(unique(z$COUNTRY))``` unique countries, ```r length(unique(z$YE
 Yearly the trend looks like this for all event types:
 
 ```{r yearPlot, fig.width=12, fig.height=4, echo=FALSE}
-
+library(ggplot2)
 qplot(YEAR,fatalities,data=z_year, geom="line", main = "Fatalities by year")
 ```
 
@@ -39,6 +52,7 @@ This chart is interesting, but it's difficult to tell what's driving variations 
 As was the case with a yearly roll-up, this chart is interesting but we're missing two axes - time and country.
 
 ```{r eventPlot, fig.width=12, fig.height=4, echo=FALSE}
+library(ggplot2)
 qplot(EVENT_TYPE,fatalities,data=z_type, geom="bar", fill=EVENT_TYPE,stat="identity",main = "Fatalities by Event Type") + theme(axis.title.x=element_blank(), axis.text.x=element_blank())
 ```
 

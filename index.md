@@ -41,7 +41,7 @@ We're able to say that 'Battle-No change of territory' accounts for the majority
 
 ---
 
-## Shiny to the rescue
+## A more comprehensive approach
 With a shiny app and choropleth, we can more easily observe how fatalities vary by cause (Event Type), time (Year), and place (Country).(It may take few seconds to load)
 
 Setting the year to 1999 and cycling through the various conflict types gives us a much clearer picture of what happened - it looks like Angola and Eritrea each had around 80,000 deaths due to 'Battle-No change of territory' in 1999. Those two conflict types and countries explain 70% of deaths in 1999. 
